@@ -32,6 +32,7 @@ code {
 	padding: 20px;
 	width: 100%;
 	max-width: 800px;
+    text-align: center;
 }
 .content ul {
 	margin: .5em 2em;
@@ -131,5 +132,5 @@ code {
 .links > a:last-of-type:hover ~ .line { --index: var(--items); }
 
 h1{
-align-content: center;
+text-align: center;
 }
