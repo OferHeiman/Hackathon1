@@ -28,7 +28,7 @@ code {
 	font-size: 1.6em;
 	line-height: 1.4em;
 	margin: 20px auto;
-	margin-top: 80px;
+	margin-top: 40px;
 	padding: 20px;
 	width: 100%;
 	max-width: 800px;
@@ -131,5 +131,5 @@ code {
 .links > a:last-of-type:hover ~ .line { --index: var(--items); }
 
 h1{
-    
+
 }
