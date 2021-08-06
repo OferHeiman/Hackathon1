@@ -22,30 +22,30 @@
         <button type="button" id="mm-show-upload" class="l but">Upload new template</button>
         <div class="row">
             <div class="column">
-              <img width="60px" height="60px" src="memes/hello1.png">
-              <img width="60px" height="60px" src="memes/hello2.png">
-              <img width="60px" height="60px" src="memes/hello3.png">
-              <img width="60px" height="60px" src="memes/hello4.png">
-              <img width="60px" height="60px" src="memes/hello5.png">
-              <img width="60px" height="60px" src="memes/hello6.jpg">
-              <img width="60px" height="60px" src="memes/hello7.png">
-              <img width="60px" height="60px" src="memes/hello8.png">
-              <img width="60px" height="60px" src="memes/hello9.png">
-              <img width="60px" height="60px" src="memes/hello10.png">
-              <img width="60px" height="60px" src="memes/hello11.png">
+              <img id="1" onclick="changeImage(document.getElementById('1').src)" width="60px" height="60px" src="memes/hello1.png">
+              <img id="2" onclick="changeImage(document.getElementById('2').src)" width="60px" height="60px" src="memes/hello2.png">
+              <img id="3" onclick="changeImage(document.getElementById('3').src)" width="60px" height="60px" src="memes/hello3.png">
+              <img id="4" onclick="changeImage(document.getElementById('4').src)" width="60px" height="60px" src="memes/hello4.png">
+              <img id="5" onclick="changeImage(document.getElementById('5').src)" width="60px" height="60px" src="memes/hello5.png">
+              <img id="6" onclick="changeImage(document.getElementById('6').src)" width="60px" height="60px" src="memes/hello6.jpg">
+              <img id="7" onclick="changeImage(document.getElementById('7').src)" width="60px" height="60px" src="memes/hello7.png">
+              <img id="8" onclick="changeImage(document.getElementById('8').src)" width="60px" height="60px" src="memes/hello8.png">
+              <img id="9" onclick="changeImage(document.getElementById('9').src)" width="60px" height="60px" src="memes/hello9.png">
+              <img id="10" onclick="changeImage(document.getElementById('10').src)" width="60px" height="60px" src="memes/hello10.png">
+              <img id="11" onclick="changeImage(document.getElementById('11').src)" width="60px" height="60px" src="memes/hello11.png">
             </div>
             <div class="column">
-                <img width="60px" height="60px" src="memes/hello12.png">
-                <img width="60px" height="60px" src="memes/hello13.png">
-                <img width="60px" height="60px" src="memes/hello14.png">
-                <img width="60px" height="60px" src="memes/hello15.png">
-                <img width="60px" height="60px" src="memes/hello16.png">
-                <img width="60px" height="60px" src="memes/hello17.png">
-                <img width="60px" height="60px" src="memes/hello18.jpg">
-                <img width="60px" height="60px" src="memes/hello19.jpg">
-                <img width="60px" height="60px" src="memes/hello20.jpg">
-                <img width="60px" height="60px" src="memes/hello21.jpg">
-                <img width="60px" height="60px" src="memes/hello22.jpg">
+                <img id="12" onclick="changeImage(document.getElementById('12').src)" width="60px" height="60px" src="memes/hello12.png">
+                <img id="13" onclick="changeImage(document.getElementById('13').src)" width="60px" height="60px" src="memes/hello13.png">
+                <img id="14" onclick="changeImage(document.getElementById('14').src)" width="60px" height="60px" src="memes/hello14.png">
+                <img id="15" onclick="changeImage(document.getElementById('15').src)" width="60px" height="60px" src="memes/hello15.png">
+                <img id="16" onclick="changeImage(document.getElementById('16').src)" width="60px" height="60px" src="memes/hello16.png">
+                <img id="17" onclick="changeImage(document.getElementById('17').src)" width="60px" height="60px" src="memes/hello17.png">
+                <img id="18" onclick="changeImage(document.getElementById('18').src)" width="60px" height="60px" src="memes/hello18.jpg">
+                <img id="19" onclick="changeImage(document.getElementById('19').src)" width="60px" height="60px" src="memes/hello19.jpg">
+                <img id="20" onclick="changeImage(document.getElementById('20').src)" width="60px" height="60px" src="memes/hello20.jpg">
+                <img id="21" onclick="changeImage(document.getElementById('21').src)" width="60px" height="60px" src="memes/hello21.jpg">
+                <img id="22" onclick="changeImage(document.getElementById('22').src)" width="60px" height="60px" src="memes/hello22.jpg">
             </div>
           </div>
           <div class="box">
@@ -62,7 +62,9 @@
     <div class="content">
       
 <div id="meme_text">&nbsp;</div>
-<div id="meme_picture"><img src="memes/hello14.png" height="auto" width="auto"></div>
+<div id="meme_picture">
+    <img id="memeimage" src="memes/hello14.png" height="auto" width="auto">
+</div>
 <p>
     </div>
     <script src="JS.js"></script>
