@@ -8,9 +8,8 @@
 </head>
 <body>
     <header id="header">
-        <nav class="links" style="--items: 4;">
-            <a href="HackathonProject.html">Home</a>
-            <a href="WhatIsAMeme.html">What is a meme?</a>
+        <nav class="links" style="--items: 3;">
+            <a href="HackathonProject.html">Meme Generator</a>
             <a href="Examples.html">Examples</a>
             <a onclick="modeDarkLight();">Dark\Light mode</a>
             <span class="line"></span>
@@ -19,7 +18,8 @@
     <div class="content">
         <h1>Meme Generator</h1>
         <p>Add text to images or memes.</p>
-        <button type="button" id="mm-show-upload" class="l but">Upload new template</button>
+        <p> Select a template or upload your own</p>
+            
         <div class="row">
             <div class="column">
               <img id="1" onclick="changeImage(document.getElementById('1').src)" width="60px" height="60px" src="memes/hello1.png">
@@ -48,22 +48,32 @@
                 <img id="22" onclick="changeImage(document.getElementById('22').src)" width="60px" height="60px" src="memes/hello22.jpg">
             </div>
           </div>
+          <form style="margin-top: 20px;">
+            <input style="margin-left: 75px;" type="file" id="user_picture" onchange="update_image()">
+            </form>
           <div class="box">
             <div>
-              <p>Top Text</p>
-              <input id="textTop" type="text" class="block" placeholder="Top text" />
+              <p>Top Text <br>
+              <textarea id="textTop" type="text" class="textarea" placeholder="Top text" oninput="updateTopText()"></textarea>
+            </div>
+        </p>
+            <div>
+              <p>Bottom Text <br>
+              <textarea id="textBottom" type="text" class="textarea" placeholder="Bottom text" oninput="updateBottomText()"></textarea>
+            </p>
             </div>
             <div>
-              <p>Bottom Text</p>
-              <input id="textBottom" type="text" class="block" placeholder="Bottom text" />
+                <input oncheck="watermark()" type="checkbox" id="watermark" name="watermark" value="watermark">
+<label for="Watermark">Remove Watermark</label><br>
             </div>
           </div>
     </div>
     <div class="content">
-      
-<div id="meme_text">&nbsp;</div>
+        <div id="memeTopText">&nbsp;</div>
+        <div id="memeBottomText">&nbsp;</div>  
 <div id="meme_picture">
-    <img id="memeimage" src="memes/hello14.png" height="auto" width="auto">
+    <img id="memeimage" src="memes/hello14.png" height="500" width="600">
+    <p id="watermarktext">Hackathon</p>
 </div>
 <p>
     </div>
