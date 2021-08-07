@@ -4,15 +4,22 @@ function changeImage(imagesrc) //click image to make it the meme image
     image.src = imagesrc;
     document.getElementsByClassName('content')[1].children[0].textContent = "";
     document.getElementsByClassName('content')[1].children[1].textContent = "";
-}
+    textarea.value="";
+    textarea2.value="";
+    selectedEffect.value='None';
+    memeImage.style.filter = "blur(0px)"
+    }
 
 function update_image() {
     let img = document.getElementById('memeimage'); // main meme image
     let file = document.querySelector('input[type=file]').files[0]; // Returns the first file element found
     img.src = window.URL.createObjectURL(file);
-    img.style = "width:80%";
-    document.getElementsByClassName('content')[1].children[0].textContent = "";
-    document.getElementsByClassName('content')[1].children[1].textContent = "";
+    document.getElementsByClassName('content')[1].children[0].textContent = "";//reset top text
+    document.getElementsByClassName('content')[1].children[1].textContent = "";//reset bottom text
+    textarea.value="";
+    textarea2.value="";
+    selectedEffect.value='None';
+    memeImage.style.filter = "blur(0px)"
 }
 
 function updateTopText() {
@@ -30,14 +37,7 @@ function updateBottomText() {
 //dragable top text
 function dragElement(elmnt) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-    if (document.getElementById(elmnt.id + "header")) {
-        /* if present, the header is where you move the DIV from:*/
-        document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-    } else {
-        /* otherwise, move the DIV from anywhere inside the DIV:*/
-        elmnt.onmousedown = dragMouseDown;
-    }
-
+    elmnt.onmousedown = dragMouseDown;
     function dragMouseDown(e) {
         e = e || window.event;
         e.preventDefault();
@@ -48,7 +48,6 @@ function dragElement(elmnt) {
         // call a function whenever the cursor moves:
         document.onmousemove = elementDrag;
     }
-
     function elementDrag(e) {
         e = e || window.event;
         e.preventDefault();
@@ -61,7 +60,6 @@ function dragElement(elmnt) {
         elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
         elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
     }
-
     function closeDragElement() {
         /* stop moving when mouse button is released:*/
         document.onmouseup = null;
@@ -73,14 +71,7 @@ dragElement(document.getElementById("memeTopText"));
 
 function dragElement(elmnt) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-    if (document.getElementById(elmnt.id + "header")) {
-        /* if present, the header is where you move the DIV from:*/
-        document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-    } else {
-        /* otherwise, move the DIV from anywhere inside the DIV:*/
-        elmnt.onmousedown = dragMouseDown;
-    }
-
+    elmnt.onmousedown = dragMouseDown;
     function dragMouseDown(e) {
         e = e || window.event;
         e.preventDefault();
@@ -91,7 +82,6 @@ function dragElement(elmnt) {
         // call a function whenever the cursor moves:
         document.onmousemove = elementDrag;
     }
-
     function elementDrag(e) {
         e = e || window.event;
         e.preventDefault();
@@ -104,7 +94,6 @@ function dragElement(elmnt) {
         elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
         elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
     }
-
     function closeDragElement() {
         /* stop moving when mouse button is released:*/
         document.onmouseup = null;
@@ -113,7 +102,7 @@ function dragElement(elmnt) {
 }
 dragElement(document.getElementById("memeBottomText"));
 
-function watermark() {
+function watermark() { //if selected deletes watermark
     if (document.getElementById('watermark').checked) {
         document.getElementById('watermarktext').textContent = "";
     } else {
@@ -134,4 +123,25 @@ function autosize() {
         // el.style.cssText = '-moz-box-sizing:content-box';
         el.style.cssText = 'height:' + el.scrollHeight + 'px';
     }, 0);
+}
+let selectedEffect=document.getElementById('effects');
+let memeImage=document.getElementById('memeimage');
+function Effects()
+{
+    selectedEffect.value == 'Blur' ? memeImage.style.filter = "blur(5px)" :  memeImage.style.filter = "blur(0px)";
+}
+let textBoxCounter=0;
+function newTextBox()
+{
+    textBoxCounter++;
+    //create text box
+    let div=document.createElement("div");
+    div.setAttribute("id","memeNewText")
+    div.textContent="";
+    document.getElementsByClassName("content")[1].appendChild(div);
+    //create textarea
+    let textbox=document.createElement("textarea");
+    textbox.setAttribute("class","textarea");
+    textbox.setAttribute("placeholder","Text #"+textBoxCounter);
+
 }

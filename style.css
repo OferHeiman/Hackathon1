@@ -17,6 +17,8 @@ body {
 	font-size: 62.5%;
 	padding: 0 20px;
 	box-sizing: border-box;
+	padding-top: 70px;
+	text-align: center;
 }
 code {
 	background: #fff1;
@@ -25,10 +27,9 @@ code {
 }
 
 .content {
-	background-color: #fff;
 	border-radius: 8px;
 	box-sizing: border-box;
-	color: #666;
+	color: white;
 	font-size: 1.6em;
 	line-height: 1.4em;
 	margin: 20px auto;
@@ -82,7 +83,7 @@ code {
 	font-weight: 300;
 }
 .links > a {
-	color: #9ab;
+	color: white;
 	padding: .75em;
 	text-align: center;
 	text-decoration: none;
@@ -178,11 +179,14 @@ code {
     text-shadow: black 0px 0px 2px;
 	-webkit-text-stroke: 2px black;
     width: 600px;
+	padding-right: 500px;
     position: absolute;
-    left: 650px;
-    top: 540px;
+    left: 315px;
+    top: 225px;
 	line-height: 40px;
 	white-space: pre-wrap;
+	word-wrap: break-word;
+	z-index: 999;
   }
   #memeBottomText
   {
@@ -194,18 +198,36 @@ code {
 	-webkit-text-stroke: 2px black;
     width: 600px;
     position: absolute;
-    left: 650px;
-    top: 990px;
+    left: 315px;
+    top: 665px;
 	line-height: 40px;
 	white-space:pre-wrap;
-	/* z-index: 999; always on top */
+	word-wrap:break-word;
+	z-index: 999;
+  }
+  #memeNewText
+  {
+	background-color: transparent;
+    font-size: 40px;
+    font-family: "Impact";
+    color: white;
+    text-shadow: black 0px 0px 2px;
+	-webkit-text-stroke: 2px black;
+    width: 600px;
+    position: absolute;
+    left: 315px;
+    top: 445px;
+	line-height: 40px;
+	white-space:pre-wrap;
+	word-wrap:break-word;
+	z-index: 999;
   }
   #watermarktext
   {
 	  position: relative;
 	  overflow: hidden;
-	  right: 270px;
-	  bottom: 20px;
+	  right: 273px;
+	  bottom: 17px;
 	  font-size: 10px;
 	  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 	  text-shadow: black 0px 0px 5px;
@@ -217,4 +239,40 @@ code {
   {
 	overflow:hidden;
 	font-size:14px;
+	margin-top: 20px;
+	width: 514px;
+  }
+
+  #flexbox
+  {
+	  display: flex;
+	  flex-direction: row-reverse;
+	  border:1px solid rgba(255, 255, 255, 0.1);
+	  border-radius: 5px;
+	  margin-top: 50px;
+	  margin-left: 250px;
+	  margin-right: 250px;
+  }
+
+  #button {
+	background-color: #345; /* Green */
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin-top: 20px;
+  }
+  #extraoptions
+  {
+	display: flex;
+	margin-top: 20px;
+	margin-left: 100px;
+  }
+
+  #memeimage
+  {
+	pointer-events: none;
   }

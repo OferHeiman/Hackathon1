@@ -1,6 +1,3 @@
 add more text box button
-add effect
-add custom images\stickers
 fix resizing
-clear placeholder text
 clean up code
