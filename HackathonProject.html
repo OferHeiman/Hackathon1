@@ -1,27 +1,29 @@
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meme Generator</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meme Generator</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header id="header">
-        <nav class="links" style="--items: 3;">
-            <a href="HackathonProject.html">Meme Generator</a>
-            <a href="Examples.html">Examples</a>
-            <a onclick="modeDarkLight();">Dark\Light mode</a>
-            <span class="line"></span>
-        </nav>
-    </header>
-    <div class="content">
-        <h1>Meme Generator</h1>
-        <p>Add text to images or memes.</p>
-        <p> Select a template or upload your own</p>
-            
-        <div class="row">
-            <div class="column">
+  <header id="header">
+    <nav class="links" style="--items: 3;">
+      <a href="HackathonProject.html">Meme Generator</a>
+      <a href="Examples.html">Examples</a>
+      <a onclick="modeDarkLight();">Dark\Light mode</a>
+      <span class="line"></span>
+    </nav>
+  </header>
+  <div class="content">
+    <h1>Meme Generator</h1>
+    <p>Add text to images or memes.</p>
+    <p> Select a template or upload your own</p>
+
+    <div class="row">
+      <div class="column">
               <img id="1" onclick="changeImage(document.getElementById('1').src)" width="60px" height="60px" src="memes/hello1.png">
               <img id="2" onclick="changeImage(document.getElementById('2').src)" width="60px" height="60px" src="memes/hello2.png">
               <img id="3" onclick="changeImage(document.getElementById('3').src)" width="60px" height="60px" src="memes/hello3.png">
@@ -47,36 +49,38 @@
                 <img id="21" onclick="changeImage(document.getElementById('21').src)" width="60px" height="60px" src="memes/hello21.jpg">
                 <img id="22" onclick="changeImage(document.getElementById('22').src)" width="60px" height="60px" src="memes/hello22.jpg">
             </div>
-          </div>
-          <form style="margin-top: 20px;">
-            <input style="margin-left: 75px;" type="file" id="user_picture" onchange="update_image()">
+            </div>
+            <form style="margin-top: 20px;">
+              <input style="margin-left: 75px;" type="file" id="user_picture" onchange="update_image()">
             </form>
-          <div class="box">
-            <div>
-              <p>Top Text <br>
-              <textarea id="textTop" type="text" class="textarea" placeholder="Top text" oninput="updateTopText()"></textarea>
+            <div class="box">
+              <div>
+                <p>Top Text <br>
+                  <textarea id="textTop" type="text" class="textarea" placeholder="Top text" oninput="updateTopText()"></textarea>
+              </div>
+              </p>
+              <div>
+                <p>Bottom Text <br>
+                  <textarea id="textBottom" type="text" class="textarea" placeholder="Bottom text"
+                    oninput="updateBottomText()"></textarea>
+                </p>
+              </div>
+              <div>
+                <input onchange="watermark();" type="checkbox" id="watermark" name="watermark" value="watermark">
+                <label for="Watermark">Remove Watermark</label><br>
+              </div>
             </div>
-        </p>
-            <div>
-              <p>Bottom Text <br>
-              <textarea id="textBottom" type="text" class="textarea" placeholder="Bottom text" oninput="updateBottomText()"></textarea>
-            </p>
             </div>
-            <div>
-                <input oncheck="watermark()" type="checkbox" id="watermark" name="watermark" value="watermark">
-<label for="Watermark">Remove Watermark</label><br>
+            <div class="content">
+              <div id="memeTopText">&nbsp;</div>
+              <div id="memeBottomText">&nbsp;</div>
+              <div id="meme_picture" style="height: 500px;">
+                <img id="memeimage" src="memes/hello14.png" height="500" width="600">
+                <p id="watermarktext">Hackathon1</p>
+              </div>
+              <p>
             </div>
-          </div>
-    </div>
-    <div class="content">
-        <div id="memeTopText">&nbsp;</div>
-        <div id="memeBottomText">&nbsp;</div>  
-<div id="meme_picture">
-    <img id="memeimage" src="memes/hello14.png" height="500" width="600">
-    <p id="watermarktext">Hackathon</p>
-</div>
-<p>
-    </div>
-    <script src="JS.js"></script>
-</body>
-</html>
+            <script src="JS.js"></script>
+            </body>
+            
+            </html>
