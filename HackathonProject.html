@@ -9,9 +9,9 @@
 </head>
 <body>
   <header id="header">
-    <nav class="links" style="--items: 3;">
+    <nav class="links" style="--items: 2;">
       <a href="HackathonProject.html">Meme Generator</a>
-      <a href="WhatIsAMeme.html">What is a meme?</a>
+      <!-- <a href="WhatIsAMeme.html">What is a meme?</a> -->
       <a onclick="modeDarkLight();">Dark\Light mode</a>
       <span class="line"></span>
     </nav>
@@ -33,7 +33,7 @@
               <img id="5" onclick="changeImage(document.getElementById('5').src)" width="60px" height="60px" src="memes/hello5.png">
               <img id="6" onclick="changeImage(document.getElementById('6').src)" width="60px" height="60px" src="memes/hello6.jpg">
               <img id="7" onclick="changeImage(document.getElementById('7').src)" width="60px" height="60px" src="memes/hello7.png">
-              <img id="8" onclick="changeImage(document.getElementById('8').src)" width="60px" height="60px" src="memes/hello8.png">
+              <img id="8" onclick="changeImage(document.getElementById('8').src)" width="60px" height="60px" src="memes/hello8.jpg">
             </div>
             <div class="column">
               <img id="9" onclick="changeImage(document.getElementById('9').src)" width="60px" height="60px" src="memes/hello9.png">
@@ -71,23 +71,23 @@
                 <input onchange="watermark();" type="checkbox" id="watermark" name="watermark" value="watermark">
                 <label for="Watermark">Remove Watermark</label><br>
               </div>
-                <div style="margin-left: 10px;margin-right: 10px;">
+                <div style="margin-left: 40px;margin-right: 40px;">
                   Effect: <select onchange="Effects()" name="effects" id="effects">
                     <option value="None" selected="selected">None</option>
                     <option value="Blur">Blur</option>
                   </select>
                 </div>
                 <div>
-                  <input onclick="newTextBox()" id="addTextButton" type="button" value="Add Text" onclick=";">
+                  <!-- <input onclick="newTextBox()" id="addTextButton" type="button" value="Add Text" onclick=";"> -->
                 </div>
               </div>
-              <input id="button" type="button" value="Generate Meme" onclick=";">
             </div>
-            
+            <input id="button" type="button" value="Generate Meme" onclick="takeshot()">
+            <div style="margin-top: 50px;" id="output"></div>
             </div>
-            <div class="content">
-              <div id="memeTopText">&nbsp;</div>
-              <div id="memeBottomText">&nbsp;</div>
+            <div id="photo" class="content">
+              <div id="memeTopText"></div>
+              <div id="memeBottomText"></div>
               <div style="height: 500px;">
                 <img id="memeimage" src="memes/hello14.png" height="500" width="600">
                 <p id="watermarktext">Hackathon1</p>
@@ -96,6 +96,9 @@
             </div>
           </div>
             <script src="JS.js"></script>
+            <script src=
+"https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js">
+    </script>
             </body>
             
             </html>
